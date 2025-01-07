@@ -19,7 +19,7 @@ namespace teszteles01
                 {
                     return 20000;
                 }
-                else if (DateTime.Today.Year-Year<30)
+                else if (DateTime.Today.Year-Year<=30)
                 {
                     return 10000;
                 }
