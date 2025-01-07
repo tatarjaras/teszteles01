@@ -52,13 +52,31 @@ namespace teszteles01.Tests
             int expected = 0;
             Assert.AreEqual(expected, car.Tax);
         }
-
         [TestMethod()]
         public void ToStringTest()
         {
             Car car = new Car("Opel", "Astra", 2010);
             string expected = "Opel Astra (2010) - 10000 Ft";
             Assert.AreEqual(expected, car.ToString());
+        }
+
+        [TestMethod()]
+        public void IsveteraneTestA()
+        {
+            Car car = new Car("Opel", "Astra", 2010);
+            Assert.IsFalse(car.Isveterane());
+        }
+        [TestMethod()]
+        public void IsveteraneTestB()
+        {
+            Car car = new Car("Opel", "Astra", 1995);
+            Assert.IsFalse(car.Isveterane());
+        }
+        [TestMethod()]
+        public void IsveteraneTestC()
+        {
+            Car car = new Car("Opel", "Astra", 1990);
+            Assert.IsTrue(car.Isveterane());
         }
     }
 }

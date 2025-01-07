@@ -39,5 +39,10 @@ namespace teszteles01
         {
             return $"{Brand} {Model} ({Year}) - {Tax} Ft";
         }
+
+        public bool Isveterane()
+        {
+            return DateTime.Today.Year - Year > 30;
+        }
     }
 }
